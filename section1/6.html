@@ -4,10 +4,18 @@
         <title>출력결과</title>
     </head>
     <body>
-        <script>
+        <script>    //홀수들의 합만 구하고 제일 작은 홀수값 
             function solution(arr){
                 let answer=[];
-               
+                let sum=0; min=Math.MAX_SAFE_INTEGER;
+               for(let x of arr){
+                   if(x%2==1){
+                       sum+=x;
+                       if(x<min) min=x;
+                   }
+               }
+               answer.push(sum);
+               answer.push(min);
                 return answer;
             }
             
