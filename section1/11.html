@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //대문자 찾기
+            function solution(s){         
+                let answer=0;
+                for (const x of s) {
+                    if(x===x.toUpperCase())answer++;
+                }
+                // 아스키코드를 이용해도됨,x.charCodeAt();이런식으로 이게 65~90이면 대문자로 처리
+                return answer;
+            }
+
+            let str="KoreaTimeGood";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

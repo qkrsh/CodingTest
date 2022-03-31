@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //특정문자의 개수 출력
+            function solution(s, t){
+                let answer=0;
+                for (const x of s) {
+                    if(x===t)answer++;
+                }
+                return answer;
+            }
+                // 다른 풀이방법 특정문자를 기준으로 문자열을 나누고 그 수를 출력해줌
+                // let answer=s.split(t).length;
+                // return answer-1;
+            
+            let str="COMPUTERPROGRAMMING";
+            console.log(solution(str, 'R'));
+        </script>
+    </body>
+</html>

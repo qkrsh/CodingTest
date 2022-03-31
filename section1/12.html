@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //소문자를 찾아 대문자로
+            function solution(s){        
+                let answer=""; 
+                for (let x of s) {
+                    let a=x.charCodeAt();
+                    if(96<a && a<123){
+                        answer+=x.toUpperCase();
+                    }else{answer+=x;}
+                }
+                return answer;
+            }
+
+            let str="ItisTimeToStudy";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
