@@ -19,9 +19,35 @@
                 }
                 return answer;
             }
-            
-            let str="KKHSSSSSSSE";
+            let str="KHHSQ";
             console.log(solution(str));
         </script>
     </body>
 </html>
+<!-- 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //중복된 문자의 수 표시
+            function solution(s){
+                let answer="";
+                let cnt=1;
+                for(let i=0;i<s.length;i++){
+                    if(s[i]==s[i+1]){
+                        cnt++;
+                    }else{
+                        answer.push(s[i]);
+                        answer.push(cnt);
+                        cont=1;
+                    }
+                }
+                return answer;
+            }
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html> -->

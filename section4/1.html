@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //각자리수의 합이 가장 큰 숫자 출력
+            function solution(n, arr){
+                let answer, max=Number.MIN_SAFE_INTEGER;
+                let sum=0;
+                for(let i=0;i<n;i++){
+                    let a =String(arr[i]).split("").forEach(element => {
+                        sum+=Number(element);
+                    });
+                    if(sum>max){
+                        answer=arr[i];
+                        max=sum;
+                    }
+                    sum=0;
+                }
+                return answer;
+            }
+            let arr=[128, 460, 603, 40, 521, 137, 123];
+            console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
+<!--  
+각자리수의 합 구하는 다른 방법
+while(x){
+    sum+=(x%10);
+    x=Math.floor(x/10);
+}  -->
