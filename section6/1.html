@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //괄호 짝이 맞는지 확인하는 문제
+            function solution(s){
+                let answer="YES";
+                let a=[];
+                for(x of s){
+                    if(x=="(")a.push(x);
+                    else{
+                        if(a.length===0)return "No";
+                        a.pop();
+                    }
+                }
+                if(a.lengt!=0)return "NO";
+                return answer;
+            }
+            
+            let a="(()(()))(()";
+            console.log(solution(a));
+        </script>
+    </body>
+</html>
