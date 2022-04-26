@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>        //후위식 연산
+            function solution(s){  
+                let answer;
+                let stack=[];
+                for(x of s){
+                    if(!isNaN(x)){
+                        stack.push(Number(x));
+                    }else{
+                        let fs=stack.pop();
+                        let se=stack.pop();
+                        let temp;
+                        if(x==='+'){
+                           temp=se+fs; 
+                        }else if(x==='/'){
+                            temp=se/fs;
+                        }else if(x==='-'){
+                            temp=se-fs;
+                        }else
+                            temp=se*fs;
+                        stack.push(temp);
+                    }
+                }
+                answer=stack[0];
+                return answer;
+            }
+
+            let str="352+*9-";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
