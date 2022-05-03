@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(meeting){
+                let answer=0;
+                let temp=0;
+                meeting.sort((a,b)=>{
+                   return a[1]-b[1];
+                })
+                console.log(meeting);
+                for(let i=0;i<meeting.length;i++){
+                    if(meeting[meeting.length-1][1]>temp && meeting[i][0]>=temp){
+                        temp=meeting[i][1];
+                        answer++;
+                    }
+                }
+                return answer;
+            }
+
+            let arr=[[1, 4], [2, 3], [3, 5], [4, 6], [5, 7]];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
