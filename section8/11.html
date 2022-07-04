@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+         
+         function solution(numbers) {
+            var answer = '';
+            for(let i=0;i<numbers.length;i++){
+                for(let j=i+1;j<numbers.length;j++){
+                    if(String(numbers[i]).substr(0,1)<String(numbers[j]).substr(0,1)){
+                        [numbers[i],numbers[j]]=[numbers[j],numbers[i]];
+                    }else if(String(numbers[i]).substr(0,1)==String(numbers[j]).substr(0,1)){
+                        if(numbers[i]%10<numbers[j]%10){
+                            [numbers[i],numbers[j]]=[numbers[j],numbers[i]];
+                        }else if(numbers[i]<10&&numbers[j]/10<numbers[j]%10){
+                            [numbers[i],numbers[j]]=[numbers[j],numbers[i]];
+                        }
+                    }
+                }
+            }
+            for(let i=0;i<numbers.length;i++){
+                answer=answer+String(numbers[i]);
+            }
+            return answer;
+        }
+            let arr=[3, 30, 34, 5,9];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>

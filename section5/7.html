@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <meta charset="UTF-8">
         <title>출력결과</title>
@@ -21,6 +21,41 @@
             let a="AbaAeC";
             let b="baeeAC";
             console.log(solution(a, b));
+        </script>
+    </body>
+</html> -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(str1, str2){
+                let answer="YES";
+                let a=new Map();
+                let b=new Map();
+                for(x of str1){
+                    if(a.has(x)) a.set(x,a.get(x)+1);
+                    else a.set(x,1);
+                }
+
+                for(x of str1){
+                    if(b.has(x)) b.set(x,b.get(x)+1);
+                    else b.set(x,1);
+                }
+
+                for(x of str1){
+                    if(a.get(x)!=b.get(x)) {
+                        answer="NO";
+                        break;
+                    }
+                return answer;
+            }
+        }
+            let c="AbaAeC";
+            let d="baeeAC";
+            console.log(solution(c, d));
         </script>
     </body>
 </html>

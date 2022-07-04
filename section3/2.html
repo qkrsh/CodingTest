@@ -8,8 +8,14 @@
             function solution(s){
                 let answer="YES";
                 s=s.toLowerCase().replace(/[^a-z]/g, '');//알파벳이 아닌걸 빈문자열로
-                if(s.split('').reverse().join('')!==s)//문자하나씩 나누고 순서 바꾸고 다시 합치기
-                 return "NO";
+                console.log(s);
+                s.split('');
+                console.log(s);
+                s.join('');
+                console.log(s);
+
+                // if(s.split('').reverse().join('')!==s)//문자하나씩 나누고 순서 바꾸고 다시 합치기
+                //  return "NO";
                 return answer;
             }
             

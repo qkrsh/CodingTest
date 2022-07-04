@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <meta charset="UTF-8">
         <title>출력결과</title>
@@ -33,6 +33,34 @@
                     sH.set(s[lt], sH.get(s[lt])-1);
                     if(sH.get(s[lt])===0) sH.delete(s[lt]);
                     lt++;
+                }
+                return answer;
+            }
+            let a="bacaAacba";
+            let b="abc";
+            console.log(solution(a, b));
+        </script>
+    </body>
+</html> -->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            
+            function solution(s, t){
+                let answer=0;
+                s=s.toLowerCase();
+                s=s.split("");
+                for(let i=0;i<s.length-2;i++){
+                    if(s[i]!=s[i+1]){
+                        if(s[i+1]!=s[i+2]){
+                            if(s[i]!=s[i+2]) answer++;
+                        }
+                    }
                 }
                 return answer;
             }

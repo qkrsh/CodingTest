@@ -6,24 +6,16 @@
     <body>
         <script>//상하좌우중에 나보다 큰게 없으면 봉우리로 설정, 그 수를 출력
             function solution(arr){  
-                let answer=0;
-                let n=arr.length;
-                let dx=[-1, 0, 1, 0];
-                let dy=[0, 1, 0, -1];
-                for(let i=0; i<n; i++){
-                    for(let j=0; j<n; j++){
-                        let flag=1;
-                        for(let k=0; k<4; k++){
-                            let nx=i+dx[k];
-                            let ny=j+dy[k];
-                            if(nx>=0 && nx<n && ny>=0 && ny<n && arr[nx][ny]>=arr[i][j]){
-                                flag=0;
-                                break;
-                            }
+                    let answer=0;
+                    for(let i=0;i<arr.length;i++){
+                        for(let j=0;j<arr.length;j++){
+                            if(arr[i][j]<arr[i-1][j]) break;
+                            else if(arr[i][j]<arr[i+1][j]) break;
+                            else if(arr[i][j]<arr[i][j-1]) break;
+                            else if(arr[i][j]<arr[i+1][j+1]) break;
+                            else answer++;
                         }
-                        if(flag) answer++;
                     }
-                }  
                   
                 return answer;
             }

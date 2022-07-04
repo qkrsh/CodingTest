@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>    //회문인가 아닌가
+            function solution(s){
+
+                // if(s.split('').reverse().join('')!==s)
+                let answer;
+                answer=s.split('');
+                answer=answer.reverse();
+                return answer;
+            }
+            
+            let str="found7, time: study; Yduts; emit, 7Dnuof";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
