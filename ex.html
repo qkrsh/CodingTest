@@ -4,18 +4,29 @@
         <title>출력결과</title>
     </head>
     <body>
-        <script>    //회문인가 아닌가
-            function solution(s){
-
-                // if(s.split('').reverse().join('')!==s)
-                let answer;
-                answer=s.split('');
-                answer=answer.reverse();
+        <script>
+            function solution(arr){
+               let answer="No";
+               let total=arr.reduce((a,b)=>a+b,0);
+               let n=arr.length;
+               function DFS(L, sum){
+                    if(L==n){
+                        if(sum==(total-sum)) {
+                            answer="YES";
+                            return;
+                    }
+                    }
+                    else{
+                        DFS(L+1,sum+arr[L]);
+                        DFS(L+1,sum);
+                    }
+               }
+               DFS(0,0);
                 return answer;
             }
-            
-            let str="found7, time: study; Yduts; emit, 7Dnuof";
-            console.log(solution(str));
+
+            let arr=[1, 3, 5, 6, 7, 10];
+            console.log(solution(arr));
         </script>
     </body>
 </html>
